@@ -1,0 +1,70 @@
+/*
+  Use system fonts for all platforms:
+
+  [1] iOS Safari, macOS Safari, macOS Firefox
+  [2] macOS Chrome
+  [3] Windows
+  [4] macOS versions < 10.11
+  [5] Сhrome OS
+  [6] Other
+
+  Sources
+  - https://css-tricks.com/snippets/css/system-font-stack/
+  - https://www.wpmediamastery.com/why-and-how-to-use-a-system-font-stack/
+*/
+body {
+  font-family: -apple-system, /* [1] */
+                BlinkMacSystemFont, /* [2] */
+                "Segoe UI", /* [3] */
+                "Helvetica Neue", /* [4] */
+                Roboto, /* [5] */
+                Arial, /* [6] */
+                sans-serif; /* [6] */;
+}
+
+/*
+  Apply font-smoothing only for HiDPI screens
+*/
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+
+  body {
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/*
+  Hide elements visually, but keep them available for screen-readers.
+
+  Used for information required for screen-reader users to understand and use
+  the site where visual display is undesirable. Information provided in this
+  manner should be kept concise, to avoid unnecessary burden on the user.
+
+  MECHANICS
+  ---------
+  [1] Contain text within 1px box
+
+  [2] Keep the layout.
+      Chose `position: fixed;` (not `absolute`) to avoid WebKit bugs with
+      overflowing the grandparent.
+
+  [3] Remove any visible trace (e.g. background color)
+
+  [4] Prevent copying of hidden text.
+*/
+.visually-hidden {
+  position: fixed; /* [2] */
+  width: 1px; /* [1] */
+  height: 1px; /* [1] */
+  padding: 0; /* [3] */
+  margin: -1px; /* [3] */
+  border: 0; /* [3] */
+  overflow: hidden; /* [1] */
+  clip: rect(0 0 0 0); /* [3] */
+  -webkit-user-select: none; /* [4] */
+  -ms-user-select: none; /* [4] */
+  user-select: none; /* [4] */
+}

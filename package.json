@@ -1,0 +1,21 @@
+{
+  "name": "pug_scss_parcel_starter_project",
+  "version": "1.0.0",
+  "description": "Starter Project Pug + Sass + JS + Parcel",
+  "scripts": {
+    "start": "rm -rf ./.parcel-cache && rm -rf ./dist && npx parcel src/pug/index.pug --open",
+    "build": "rm -rf ./.parcel-cache && rm -rf ./dist && npx parcel build src/pug/index.pug --public-url ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.0.0-beta.2",
+    "@parcel/transformer-sass": "^2.0.0-beta.2",
+    "cssnano": "^5.0.2",
+    "parcel": "^2.0.0-beta.2",
+    "postcss": "^8.2.15",
+    "pug": "^3.0.2",
+    "sass": "^1.32.13"
+  }
+}
