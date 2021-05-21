@@ -1,0 +1,16 @@
+// Truncate text to fit in a single line
+@mixin text-truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Truncate text at a specific number of lines
+@mixin text-truncate-lines($line-count) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line-count;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
